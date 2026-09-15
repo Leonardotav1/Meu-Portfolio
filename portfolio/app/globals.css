@@ -84,3 +84,38 @@ body {
 .fade-in {
   animation: fadein 0.6s ease-out both;
 }
+
+:focus-visible {
+  outline: 2px solid var(--color-phosphor);
+  outline-offset: 2px;
+}
+
+.img-placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(57, 255, 110, 0.07) 0px,
+    rgba(57, 255, 110, 0.07) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+.ticker {
+  overflow: hidden;
+}
+
+.ticker-track {
+  display: inline-flex;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+
+.ticker-item {
+  padding-right: 3rem;
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}

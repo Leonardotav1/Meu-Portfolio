@@ -1,6 +1,8 @@
 import { Section } from "@/components/Terminal";
 import { profile, socials } from "@/lib/data";
 
+const phoneLink = `tel:+55${profile.phone.replace(/[^0-9]/g, "")}`;
+
 export default function Contact() {
   return (
     <Section id="contato" index="05" title="CONTATO">
@@ -23,6 +25,12 @@ export default function Contact() {
           >
             enviar_email
           </a>
+          <a
+            href={phoneLink}
+            className="border border-phosphor px-5 py-2.5 text-phosphor transition-colors hover:bg-phosphor hover:text-black"
+          >
+            ligar
+          </a>
           {socials.map((social) => (
             <a
               key={social.label}
@@ -37,7 +45,8 @@ export default function Contact() {
         </div>
 
         <p className="mt-6 text-xs text-phosphor-dim">
-          local: {profile.location} | status: {profile.status}
+          local: {profile.location} | telefone: {profile.phone} | status:{" "}
+          {profile.status}
         </p>
       </div>
     </Section>

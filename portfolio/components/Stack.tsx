@@ -4,7 +4,7 @@ import { stacks } from "@/lib/data";
 export default function Stack() {
   return (
     <Section id="stacks" index="02" title="MINHA STACK">
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {stacks.map((group) => (
           <div
             key={group.group}
