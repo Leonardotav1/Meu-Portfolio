@@ -1,62 +1,19 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import { Section } from "@/components/Terminal";
+import ProjectVideo from "@/components/ProjectVideo";
 import { projects } from "@/lib/data";
 
-const categories = [
-  "TODOS",
-  ...Array.from(new Set(projects.map((project) => project.category))),
-];
-
 export default function Projects() {
-  const [category, setCategory] = useState("TODOS");
-
-  const filtered =
-    category === "TODOS"
-      ? projects
-      : projects.filter((project) => project.category === category);
-
   return (
     <Section id="projetos" index="03" title="MEUS PROJETOS">
-      <div className="mb-8 flex flex-wrap gap-3 text-xs">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            type="button"
-            aria-pressed={category === cat}
-            onClick={() => setCategory(cat)}
-            className={`border px-4 py-1.5 transition-colors ${
-              category === cat
-                ? "border-phosphor bg-phosphor text-black"
-                : "border-phosphor/30 text-foreground/70 hover:border-phosphor hover:text-phosphor"
-            }`}
-          >
-            [ {cat} ]
-          </button>
-        ))}
-      </div>
-
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {filtered.map((project) => (
+        {projects.map((project) => (
           <article
             key={project.name}
             className="flex flex-col border border-phosphor/30 bg-black/40 transition-colors hover:border-phosphor/70"
           >
-            {project.video ? (
-              <div className="relative aspect-video border-b border-phosphor/30">
-                <video
-                  src={project.video}
-                  controls
-                  preload="metadata"
-                  playsInline
-                  className="h-full w-full bg-black object-contain"
-                />
-                <span className="absolute left-2 top-2 border border-amber/60 bg-black/70 px-2 py-0.5 text-[10px] text-amber">
-                  [ VIDEO ]
-                </span>
-              </div>
+{project.video ? (
+              <ProjectVideo src={project.video} />
             ) : project.image ? (
               <div className="relative aspect-video border-b border-phosphor/30">
                 <Image
@@ -124,12 +81,6 @@ export default function Projects() {
           </article>
         ))}
       </div>
-
-      {filtered.length === 0 && (
-        <p className="text-sm text-phosphor-dim">
-          NENHUM PROJETO NESTE CATÁLOGO
-        </p>
-      )}
     </Section>
   );
 }
