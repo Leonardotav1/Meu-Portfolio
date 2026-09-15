@@ -19,7 +19,7 @@ export default function Home() {
             href="#inicio"
             className="glow font-display text-2xl tracking-wide text-phosphor"
           >
-            ~/portfolio
+            ~/Portfólio
           </a>
           <div className="ml-auto flex flex-wrap gap-x-5 text-xs text-foreground/60">
             {nav.map((item) => (

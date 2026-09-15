@@ -3,7 +3,6 @@ import Image_LHC from "@/public/Images/Image_LHC.jpg";
 export type Project = {
   name: string;
   year: string;
-  category: string;
   description: string;
   stack: string[];
   image?: string;
@@ -45,7 +44,7 @@ export const profile = {
   role: "DESENVOLVEDOR FULL STACK",
   tagline:
     "Estudante de Análise e Desenvolvimento de Sistemas focado em backend Java, Node.js e SQL — construindo soluções web com APIs REST e boas práticas.",
-  location: "CAJAZEIRAS - PB",
+  location: "Santa Helena - PB",
   email: "leonardotavares656@gmail.com",
   phone: "(83) 99619-2889",
   status: "EM BUSCA DE NOVOS DESAFIOS",
@@ -97,7 +96,14 @@ export const stacks: StackGroup[] = [
   },
   {
     group: "FRONTEND",
-    items: ["React", "Tailwind CSS", "Handlebars", "HTML", "CSS"],
+    items: [
+      "React",
+      "React Native",
+      "Next.js",
+      "Tailwind CSS",
+      "Handlebars",
+      "Three.js",
+    ],
   },
   {
     group: "BACKEND",
@@ -105,7 +111,15 @@ export const stacks: StackGroup[] = [
   },
   {
     group: "FERRAMENTAS",
-    items: ["Unity", "Git", "GitHub", "Linux", "Figma", "Microsoft Excel"],
+    items: [
+      "Unity",
+      "Git",
+      "GitHub",
+      "Linux",
+      "Figma",
+      "Microsoft Excel",
+      "npm",
+    ],
   },
 ];
 
@@ -113,29 +127,34 @@ export const projects: Project[] = [
   {
     name: "O GUARDIÃO DAS SETE REGIÕES",
     year: "2026",
-    category: "game",
     description:
       "Jogo 2D top-down de aventura com sistemas de combate, inventário, IA de inimigos e gerenciamento de estados, aplicando lógica de programação e organização de código em Unity.",
-stack: ["Unity", "C#", "Git", "GitHub"],
+    stack: ["Unity", "C#", "Git", "GitHub"],
     image: "",
     video: "/videos/Video_gdsr.mp4",
     repo: "https://github.com/Leonardotav1",
   },
   {
-    name: "SISTEMA DE GESTÃO ESCOLAR",
+    name: "SISTEMA DE PESQUISA ELEITORAL",
     year: "",
-    category: "web",
     description:
-      "Aplicação web para gerenciamento de alunos, turmas e informações acadêmicas, utilizando APIs REST, banco de dados NoSQL e integração entre front-end e back-end.",
-    stack: ["React", "Node.js", "Express.js", "MongoDB", "JavaScript", "Git"],
+      "Aplicação mobile para gerenciamento pesquisas eleitorais, utilizando APIs REST, banco de dados NoSQL e integração entre front-end e back-end.",
+    stack: [
+      "React-Native",
+      "TailwindCSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JavaScript",
+      "Git",
+    ],
     image: "",
-    video: "",
+    video: "/videos/CivicSync.mp4",
     repo: "https://github.com/Leonardotav1",
   },
   {
     name: "SIMULADOR DE COLISÃO (LHC)",
     year: "",
-    category: "web",
     description:
       "Aplicação interativa para visualização de colisões de partículas, criada para facilitar a compreensão de conceitos científicos por meio de simulações 3D e visualização dinâmica.",
     stack: ["Python", "React", "Three.js", "JavaScript"],
