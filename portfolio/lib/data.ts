@@ -1,8 +1,13 @@
+import Image_LHC from "@/public/Images/Image_LHC.jpg";
+
 export type Project = {
   name: string;
   year: string;
+  category: string;
   description: string;
   stack: string[];
+  image?: string;
+  video?: string;
   repo?: string;
   demo?: string;
 };
@@ -29,18 +34,45 @@ export type NavItem = {
   href: string;
 };
 
+export type Education = {
+  school: string;
+  course: string;
+  period: string;
+};
+
 export const profile = {
-  name: "SEU NOME",
-  role: "DESENVOLVEDOR FULL-STACK",
-  tagline: "Transformando café em código desde o século passado.",
-  location: "Brasil",
-  email: "voce@email.com",
+  name: "Leonardo Tavares",
+  role: "DESENVOLVEDOR FULL STACK",
+  tagline:
+    "Estudante de Análise e Desenvolvimento de Sistemas focado em backend Java, Node.js e SQL — construindo soluções web com APIs REST e boas práticas.",
+  location: "CAJAZEIRAS - PB",
+  email: "leonardotavares656@gmail.com",
+  phone: "(83) 99619-2889",
   status: "EM BUSCA DE NOVOS DESAFIOS",
+  photo: "/Images/Foto.jpg",
   about: [
-    "Linha sobre você: apresente quem é, sua área e o que te move.",
-    "Linha sobre você: fale da sua experiência e do que você entrega bem.",
+    "Estudante de Análise e Desenvolvimento de Sistemas no IFPB com foco em desenvolvimento backend e construção de soluções web.",
+    "Experiência prática com Java, Spring Boot, Node.js, TypeScript, SQL, MongoDB e React, além de Git, GitHub e Linux. Atuei no desenvolvimento de jogos e aplicações web, trabalhando com APIs REST, organização de dados e código com atenção ao desempenho, legibilidade e boas práticas.",
   ],
 };
+
+export const education: Education[] = [
+  {
+    school: "IFPB — Cajazeiras",
+    course: "Análise e Desenvolvimento de Sistemas",
+    period: "2023 — 2027",
+  },
+  {
+    school: "SENAI — Santa Helena",
+    course: "Assistente Administrativo",
+    period: "2024 — 2025",
+  },
+  {
+    school: "ECI Elaine Soares Brasileiro",
+    course: "Ensino Médio",
+    period: "2019 — 2022",
+  },
+];
 
 export const nav: NavItem[] = [
   { label: "01_SOBRE", href: "#sobre" },
@@ -51,69 +83,88 @@ export const nav: NavItem[] = [
 ];
 
 export const socials: Social[] = [
-  { label: "GITHUB", url: "https://github.com/" },
-  { label: "LINKEDIN", url: "https://www.linkedin.com/" },
+  { label: "GITHUB", url: "https://github.com/Leonardotav1" },
+  {
+    label: "LINKEDIN",
+    url: "https://www.linkedin.com/in/leonardo-tavares-696240289",
+  },
 ];
 
 export const stacks: StackGroup[] = [
   {
+    group: "LINGUAGENS",
+    items: ["Java", "C#", "Python", "JavaScript", "TypeScript", "SQL"],
+  },
+  {
     group: "FRONTEND",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML/CSS"],
+    items: ["React", "Tailwind CSS", "Handlebars", "HTML", "CSS"],
   },
   {
     group: "BACKEND",
-    items: ["Node.js", "NestJS", "PostgreSQL", "Prisma", "REST / GraphQL"],
+    items: ["Node.js", "Spring Boot", "Express.js", "MongoDB", "REST APIs"],
   },
   {
     group: "FERRAMENTAS",
-    items: ["Git", "Docker", "Linux", "Figma", "Vercel"],
+    items: ["Unity", "Git", "GitHub", "Linux", "Figma", "Microsoft Excel"],
   },
 ];
 
 export const projects: Project[] = [
   {
-    name: "PROJETO 01",
-    year: "2025",
+    name: "O GUARDIÃO DAS SETE REGIÕES",
+    year: "2026",
+    category: "game",
     description:
-      "Sistema web que resolve um problema real. Substitua pela descrição do seu projeto e ajuste a stack.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    repo: "https://github.com/",
-    demo: "https://github.com/",
+      "Jogo 2D top-down de aventura com sistemas de combate, inventário, IA de inimigos e gerenciamento de estados, aplicando lógica de programação e organização de código em Unity.",
+stack: ["Unity", "C#", "Git", "GitHub"],
+    image: "",
+    video: "/videos/Video_gdsr.mp4",
+    repo: "https://github.com/Leonardotav1",
   },
   {
-    name: "PROJETO 02",
-    year: "2024",
+    name: "SISTEMA DE GESTÃO ESCOLAR",
+    year: "",
+    category: "web",
     description:
-      "Dashboard com visualização de dados e relatórios. Substitua pela descrição do seu projeto.",
-    stack: ["React", "Node.js", "PostgreSQL"],
-    repo: "https://github.com/",
+      "Aplicação web para gerenciamento de alunos, turmas e informações acadêmicas, utilizando APIs REST, banco de dados NoSQL e integração entre front-end e back-end.",
+    stack: ["React", "Node.js", "Express.js", "MongoDB", "JavaScript", "Git"],
+    image: "",
+    video: "",
+    repo: "https://github.com/Leonardotav1",
   },
   {
-    name: "PROJETO 03",
-    year: "2024",
+    name: "SIMULADOR DE COLISÃO (LHC)",
+    year: "",
+    category: "web",
     description:
-      "Aplicativo ou API de uso pessoal. Substitua pela descrição do seu projeto.",
-    stack: ["NestJS", "Prisma", "Docker"],
-    repo: "https://github.com/",
+      "Aplicação interativa para visualização de colisões de partículas, criada para facilitar a compreensão de conceitos científicos por meio de simulações 3D e visualização dinâmica.",
+    stack: ["Python", "React", "Three.js", "JavaScript"],
+    image: Image_LHC.src,
+    video: "",
+    repo: "https://github.com/Leonardotav1",
   },
 ];
 
 export const experiences: Experience[] = [
   {
-    period: "2022 — ATUAL",
-    role: "Desenvolvedor FULL-STACK",
-    company: "EMPRESA X",
+    period: "2025 — PRESENTE",
+    role: "Desenvolvedor de Jogos",
+    company: "SOMBRA 7 STUDIOS",
     highlights: [
-      "Descreva a sua principal entrega e impacto no negócio.",
-      "Descreva a stack utilizada e o tamanho da equipe.",
+      "Atuação no desenvolvimento de um jogo da empresa com a engine Unity, apoiando testes e evolução do produto.",
+      "Desenvolvimento de scripts em C# com foco em desempenho, legibilidade e manutenção do código.",
+      "Versionamento do projeto utilizando Git e GitHub.",
+      "Correção de bugs e problemas relacionados a versionamento, gameplay e lógicas presentes no jogo.",
     ],
   },
   {
-    period: "2020 — 2022",
-    role: "Desenvolvedor JÚNIOR",
-    company: "EMPRESA Y",
+    period: "2023 — 2024",
+    role: "Auxiliar Administrativo",
+    company: "PREFEITURA DE SANTA HELENA",
     highlights: [
-      "Descreva as responsabilidades e projetos que assumiu.",
+      "Organização de documentos, planilhas e registros administrativos utilizando Microsoft Excel, com atenção à precisão e ao controle das informações.",
+      "Apoio na elaboração de relatórios e no acompanhamento de demandas, contribuindo para a rotina operacional da unidade.",
+      "Suporte aos demais setores nas atividades administrativas e organização de agendas e reuniões.",
     ],
   },
 ];
