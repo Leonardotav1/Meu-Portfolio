@@ -7,6 +7,7 @@ export type Project = {
   stack: string[];
   image?: string;
   video?: string;
+  videoOrientation?: "portrait" | "landscape";
   repo?: string;
   demo?: string;
 };
@@ -132,6 +133,7 @@ export const projects: Project[] = [
     stack: ["Unity", "C#", "Git", "GitHub"],
     image: "",
     video: "/videos/Video_gdsr.mp4",
+    videoOrientation: "landscape",
     repo: "https://github.com/Leonardotav1",
   },
   {
@@ -150,7 +152,19 @@ export const projects: Project[] = [
     ],
     image: "",
     video: "/videos/CivicSync.mp4",
+    videoOrientation: "portrait",
     repo: "https://github.com/Leonardotav1",
+  },
+  {
+    name: "TO-DO LIST",
+    year: "",
+    description:
+      "Gerenciador de tarefas com React e TypeScript: adicionar, editar e excluir afazeres, com interface responsiva, dark mode via shadcn/ui, estado global com Context API e persistência em localStorage.",
+    stack: ["React", "TypeScript", "Context API", "shadcn/ui", "Tailwind CSS"],
+    image: "",
+    video: "/videos/ToDoList.mp4",
+    videoOrientation: "landscape",
+    repo: "https://github.com/Leonardotav1/To-do-list",
   },
   {
     name: "SIMULADOR DE COLISÃO (LHC)",
