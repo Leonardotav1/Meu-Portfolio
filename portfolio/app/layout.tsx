@@ -18,6 +18,13 @@ const mono = Share_Tech_Mono({
 export const metadata: Metadata = {
   title: `${profile.name} — ${profile.role}`,
   description: profile.tagline,
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
+  openGraph: {
+    title: `${profile.name} — ${profile.role}`,
+    description: profile.tagline,
+    type: "website",
+    locale: "pt_BR",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
