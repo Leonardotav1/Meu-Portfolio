@@ -6,14 +6,17 @@ import { projects } from "@/lib/data";
 export default function Projects() {
   return (
     <Section id="projetos" index="03" title="MEUS PROJETOS">
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project) => (
           <article
             key={project.name}
             className="flex flex-col border border-phosphor/30 bg-black/40 transition-colors hover:border-phosphor/70"
           >
 {project.video ? (
-              <ProjectVideo src={project.video} />
+              <ProjectVideo
+                src={project.video}
+                orientation={project.videoOrientation ?? "landscape"}
+              />
             ) : project.image ? (
               <div className="relative aspect-video border-b border-phosphor/30">
                 <Image
