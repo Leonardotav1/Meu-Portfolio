@@ -23,7 +23,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>

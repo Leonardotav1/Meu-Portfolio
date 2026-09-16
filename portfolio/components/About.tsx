@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Section } from "@/components/Terminal";
 import { education, profile } from "@/lib/data";
-import Foto from "@/public/Images/Foto.jpg"
  
 const systemInfo = [
   { key: "hostname", value: "portfolio" },
@@ -23,13 +22,13 @@ export default function About() {
                   src={profile.photo}
                   alt={profile.name}
                   fill
-                  sizes="144px"
+                  sizes="160px"
                   className="object-cover"
                 />
               </div>
             ) : (
-              <div className="img-placeholder flex h-auto w-36 shrink-0 items-center justify-center border border-phosphor/40 p-1 text-center text-[10px] leading-4 text-phosphor-dim">
-                <Image src={Foto} alt="" className="w-36 h-auto" ></Image>
+              <div className="img-placeholder flex h-36 w-36 shrink-0 items-center justify-center border border-phosphor/40 text-[10px] text-phosphor-dim">
+                [ SEM FOTO ]
               </div>
             )}
 
