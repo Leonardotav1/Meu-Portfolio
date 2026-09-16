@@ -6,7 +6,8 @@ import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Reveal from "@/components/Reveal";
 import BackToTop from "@/components/BackToTop";
-import { nav, profile } from "@/lib/data";
+import ScrollSpy from "@/components/ScrollSpy";
+import { profile } from "@/lib/data";
 
 const tickerText = ` ${profile.tagline} `;
 
@@ -21,17 +22,7 @@ export default function Home() {
           >
             ~/Portfólio
           </a>
-          <div className="ml-auto flex flex-wrap gap-x-5 text-xs text-foreground/60">
-            {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="transition-colors hover:text-phosphor"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
+          <ScrollSpy />
         </div>
       </nav>
 
